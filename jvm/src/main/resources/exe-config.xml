@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+    <dontWrapJar>false</dontWrapJar>
+    <headerType>gui</headerType>
+    <jar>C:\dev\sda\sda\jvm\build\libs\jvm-1.0-SNAPSHOT.jar</jar>
+    <outfile>C:\dev\sda\sda\jvm\src\main\resources\com.bucur.randomizer.exe</outfile>
+    <errTitle></errTitle>
+    <cmdLine></cmdLine>
+    <chdir>.</chdir>
+    <priority>normal</priority>
+    <downloadUrl>http://java.com/download</downloadUrl>
+    <supportUrl></supportUrl>
+    <stayAlive>false</stayAlive>
+    <restartOnCrash>false</restartOnCrash>
+    <manifest></manifest>
+    <icon>C:\dev\sda\sda\jvm\src\main\resources\chrome-icon.ico</icon>
+    <jre>
+        <path></path>
+        <bundledJre64Bit>false</bundledJre64Bit>
+        <bundledJreAsFallback>false</bundledJreAsFallback>
+        <minVersion>1.8</minVersion>
+        <maxVersion></maxVersion>
+        <jdkPreference>preferJre</jdkPreference>
+        <runtimeBits>64/32</runtimeBits>
+    </jre>
+    <splash>
+        <file>C:\dev\sda\sda\jvm\src\main\resources\splash-screen.bmp</file>
+        <waitForWindow>true</waitForWindow>
+        <timeout>60</timeout>
+        <timeoutErr>true</timeoutErr>
+    </splash>
+</launch4jConfig>

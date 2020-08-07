@@ -1,0 +1,22 @@
+# override configuration for spring boot 2
+server:
+  port: 8081
+
+# spring configuration using auto configured in memory db
+spring:
+  # override the default data source configuration
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+      show_sql: true
+    #      ddl-auto: create-drop
+    #      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    #      id.new_generator_mappings: true
+    properties.hibernate.format_sql: true
+  h2.console.enabled: true # the JDBC URL is jdbc:h2:mem:testdb

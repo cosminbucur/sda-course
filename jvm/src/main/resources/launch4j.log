@@ -1,0 +1,45 @@
+
+
+Version:	3.12
+CmdLine:	C:\dev\sda\sda\jvm\src\main\resources\com.bucur.randomizer.exe --l4j-debug
+WOW64:		yes
+Working dir:	C:\dev\sda\sda\jvm\src\main\resources\.
+Java min ver:	1.008.000
+Java max ver:	
+64-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.6
+Ignore:		1.006.000
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.6.0_25
+Ignore:		1.006.000_025
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Check launcher:	C:\Program Files (x86)\Java\jre1.8.0_211\bin\javaw.exe (OK)
+Match:		1.008.000
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_191
+Check launcher:	C:\Program Files (x86)\Java\jre1.8.0_191\bin\javaw.exe (OK)
+Match:		1.008.000_191
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_201
+Check launcher:	C:\Program Files (x86)\Java\jre1.8.0_201\bin\javaw.exe (OK)
+Match:		1.008.000_201
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_211
+Check launcher:	C:\Program Files (x86)\Java\jre1.8.0_211\bin\javaw.exe (OK)
+Match:		1.008.000_211
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Ignore:		1.008.000
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_201
+Ignore:		1.008.000_201
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_202
+Ignore:		1.008.000_202
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+64-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+64-bit search:	SOFTWARE\JavaSoft\JDK...
+Check:		SOFTWARE\JavaSoft\JDK\11.0.1
+Check launcher:	C:\Program Files\Java\jdk-11.0.1\bin\javaw.exe (OK)
+Match:		1.011.000_001
+Runtime used:	1.011.000_001 (64-bit)
+Launcher:	C:\Program Files\Java\jdk-11.0.1\bin\javaw.exe
+Launcher args:	-jar "C:\dev\sda\sda\jvm\src\main\resources\com.bucur.randomizer.exe"
+Args length:	59/32768 chars
+Exit code:	1
