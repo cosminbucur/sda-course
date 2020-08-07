@@ -1,1 +1,1 @@
-db.getCollection('doctors').insert({1: 'Kenny Jr'})
+db.getCollection('doctors').insert({1: 'Kenny Jr'})
