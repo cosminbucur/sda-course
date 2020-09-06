@@ -32,10 +32,6 @@ public class HibernateUtil {
         return sessionFactory;
     }
 
-    public static void shutdown() {
-        getSessionFactory().close();
-    }
-
     private static SessionFactory buildSessionFactory() {
         // load up the configuration using the hibernate.cfg.xml
         Configuration configuration = createConfig();

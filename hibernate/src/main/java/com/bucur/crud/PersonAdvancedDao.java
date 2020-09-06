@@ -133,10 +133,5 @@ public class PersonAdvancedDao {
         session = sessionFactory.openSession();
         tx = session.beginTransaction();
     }
-//
-//    private void handleException(HibernateException e) throws DataAccessLayerException {
-//        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-//        HibernateFactory.rollback(tx);
-//        throw new DataAccessLayerException(e);
-//    }
+
 }
