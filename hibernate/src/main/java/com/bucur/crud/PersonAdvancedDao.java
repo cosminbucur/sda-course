@@ -72,7 +72,6 @@ public class PersonAdvancedDao {
             startOperation();
             Query query = session.createQuery("FROM Person");
             persons = query.list();
-            tx.commit();
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
