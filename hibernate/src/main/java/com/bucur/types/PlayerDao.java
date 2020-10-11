@@ -1,32 +1,24 @@
 package com.bucur.types;
 
 import com.bucur.config.HibernateUtil;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
-
-import java.util.List;
-import java.util.logging.Logger;
 
 public class PlayerDao {
 
-    private static final Logger logger = Logger.getLogger(PlayerDao.class.getName());
-
-    private Session session;
-    private Transaction tx;
-
     public void create(Player player) {
+        Session session = null;
+        Transaction transaction = null;
         try {
-            startOperation();
+            session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
             session.save(player);
-            tx.commit();
-        } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
             }
-            logger.severe("could not save entity " + player);
+            e.printStackTrace();
         } finally {
             if (session != null) {
                 session.close();
@@ -35,76 +27,19 @@ public class PlayerDao {
     }
 
     public Player findById(Long id) {
-        Player player = null;
+        Player result = null;
+        Session session = null;
         try {
-            startOperation();
-            player = session.find(Player.class, id);
-            return player;
-        } catch (HibernateException e) {
-            logger.severe("could not find entity by id " + id);
+            session = HibernateUtil.getSessionFactory().openSession();
+            result = session.find(Player.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             if (session != null) {
                 session.close();
             }
         }
-        return player;
-    }
-
-    public List findAll() {
-        List players = null;
-        try {
-            startOperation();
-            Query query = session.createQuery("FROM Player");
-            players = query.list();
-            tx.commit();
-        } catch (HibernateException e) {
-            logger.severe("could not find all");
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        return players;
-    }
-
-    public void update(Player player) {
-        try {
-            startOperation();
-            session.update(player);
-            tx.commit();
-        } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            logger.severe("could not update entity " + player);
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-    }
-
-    public void delete(Player player) {
-        try {
-            startOperation();
-            session.delete(player);
-            tx.commit();
-        } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            logger.severe("could not delete entity " + player);
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-    }
-
-    private void startOperation() {
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        session = sessionFactory.openSession();
-        tx = session.beginTransaction();
+        return result;
     }
 
 }

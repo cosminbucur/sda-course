@@ -1,16 +1,16 @@
-package com.bucur.associations.many_to_many;
+package com.bucur.associations.one_to_one;
 
 import com.bucur.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-public class PostDao {
+public class CarDao {
 
-    public void create(Post post) {
+    public void create(Car car) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.save(post);
+            session.save(car);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -20,10 +20,10 @@ public class PostDao {
         }
     }
 
-    public Post findById(Long id) {
-        Post result = null;
+    public Car findById(Long id) {
+        Car result = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            result = session.find(Post.class, id);
+            result = session.find(Car.class, id);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -2,10 +2,9 @@ package com.bucur.queries.hql;
 
 import com.bucur.config.HibernateUtil;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
-import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -14,70 +13,63 @@ public class StockDao {
 
     private static final Logger logger = Logger.getLogger(StockDao.class.getName());
 
-    private Session session;
-    private Transaction tx;
-
     public void create(Stock stock) {
-        try {
-            startOperation();
+        Transaction transaction = null;
+        try (Session session = openSession()) {
+            transaction = session.beginTransaction();
             session.save(stock);
-            tx.commit();
-            session.close();
+            transaction.commit();
         } catch (Exception e) {
-            if (tx != null) {
-                tx.rollback();
+            if (transaction != null) {
+                transaction.rollback();
             }
             logger.severe("error creating stock " + stock);
         }
     }
 
-    public List findAllWithHqlQuery() {
-        String hql = "from com.bucur.hql.Stock";
-
-        List result = new ArrayList();
-        try {
-            startOperation();
+    public List<Stock> findAllWithHqlQuery() {
+        String hql = "FROM com.bucur.queries.hql.Stock";
+        List<Stock> result = new ArrayList<>();
+        try (Session session = openSession()) {
 
             // query using HQL
-            Query query = session.createQuery(hql, Stock.class);
+            Query<Stock> query = session.createQuery(hql, Stock.class);
             result = query.getResultList();
-
-            tx.commit();
-            session.close();
         } catch (Exception e) {
-            if (tx != null) {
-                tx.rollback();
-            }
             logger.severe("error executing hql: " + hql);
         }
         return result;
     }
 
-    public List findAllByStockCodeWithNamedQuery(String stockCode) {
-        List result = new ArrayList();
-        try {
-            startOperation();
+    public List<Stock> findAllByStockCodeWithNamedQuery(String stockCode) {
+        List<Stock> result = new ArrayList<>();
+        String queryName = "Stock.findAllByStockCode";
+        try (Session session = openSession()) {
 
             // named query with parameters using HQL
-            Query query = session.createNamedQuery("findStockByStockCode", Stock.class);
-            // use query from javax.persistence
+            Query<Stock> query = session.createNamedQuery(queryName, Stock.class);
             query.setParameter("stockCode", stockCode);
             result = query.getResultList();
-
-            tx.commit();
-            session.close();
         } catch (Exception e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            logger.severe("error executing named query: findStockByStockCode");
+            logger.severe("error executing named query: " + queryName);
         }
         return result;
     }
 
-    private void startOperation() {
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        session = sessionFactory.openSession();
-        tx = session.beginTransaction();
+    public List<Stock> findAllOrderedByName() {
+        List<Stock> result = new ArrayList<>();
+        String queryName = "Stock.findAllOrderedByName";
+        try (Session session = openSession()) {
+
+            Query<Stock> query = session.createNamedQuery(queryName, Stock.class);
+            result = query.getResultList();
+        } catch (Exception e) {
+            logger.severe("error executing named query: " + queryName);
+        }
+        return result;
+    }
+
+    private Session openSession() {
+        return HibernateUtil.getSessionFactory().openSession();
     }
 }

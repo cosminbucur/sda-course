@@ -1,7 +1,5 @@
 package com.bucur.queries.native_query;
 
-import com.bucur.queries.hql.Stock;
-
 import java.util.List;
 
 public class DemoNativeQuery {
@@ -10,18 +8,18 @@ public class DemoNativeQuery {
         TraderDao traderDao = new TraderDao();
 
         Trader trader1 = new Trader();
-        trader1.setName("smith");
+        trader1.setName("trader1");
 
         Trader trader2 = new Trader();
-        trader2.setName("baker");
+        trader2.setName("trader2");
 
         traderDao.create(trader1);
         traderDao.create(trader2);
 
-        List<Stock> traders = traderDao.findAllWithNativeQuery();
+        List<Trader> traders = traderDao.findAllWithNativeQuery();
         System.out.println("--- all traders: " + traders);
 
-        List<Stock> filteredTraders = traderDao.findAllByNameWithNamedNativeQuery(trader1.getName());
+        List<Trader> filteredTraders = traderDao.findAllByNameWithNamedNativeQuery(trader1.getName());
         System.out.println("--- filtered traders: " + filteredTraders);
     }
 }

@@ -1,25 +1,20 @@
 package com.bucur.associations.one_to_one;
 
-import java.time.LocalDate;
-
 public class DemoOneToOne {
 
     public static void main(String[] args) {
-        AccountDao accountDao = new AccountDao();
+        CarDao carDao = new CarDao();
 
-        Employee employee = new Employee();
-        employee.setFirstName("jon");
-        employee.setLastName("snow");
-        employee.setEmail("jonsnow@gmail.com");
+        Parking parking = new Parking();
+        parking.setName("spot1");
 
-        Account account = new Account();
-        account.setAccountNumber("12");
-        account.setEmploymentDate(LocalDate.now());
-        account.setEmployee(employee);
+        Car car = new Car();
+        car.setLicensePlate("B20CAR");
+        car.setParking(parking);
 
-        employee.setAccount(account);
+        parking.setCar(car);
 
         // save both in one shot
-        accountDao.create(account);
+        carDao.create(car);
     }
 }

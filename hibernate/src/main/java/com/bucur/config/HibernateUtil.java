@@ -8,10 +8,12 @@ import com.bucur.associations.one_to_many_uni.Daughter;
 import com.bucur.associations.one_to_many_uni.Mother;
 import com.bucur.associations.one_to_many_uni_join.Father;
 import com.bucur.associations.one_to_many_uni_join.Son;
-import com.bucur.associations.one_to_one.Account;
-import com.bucur.associations.one_to_one.Employee;
-import com.bucur.audit.customer.Customer;
-import com.bucur.audit.history.CustomerHistory;
+import com.bucur.associations.one_to_one.Car;
+import com.bucur.associations.one_to_one.Parking;
+import com.bucur.associations.one_to_one_join.Account;
+import com.bucur.associations.one_to_one_join.Employee;
+import com.bucur.listeners.customer.Customer;
+import com.bucur.listeners.history.CustomerHistory;
 import com.bucur.crud.Person;
 import com.bucur.queries.hql.Stock;
 import com.bucur.queries.native_query.Trader;
@@ -26,7 +28,7 @@ import java.util.Properties;
 
 public class HibernateUtil {
 
-    private static SessionFactory sessionFactory = buildSessionFactory();
+    private static final SessionFactory sessionFactory = buildSessionFactory();
 
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
@@ -50,9 +52,9 @@ public class HibernateUtil {
         // hibernate settings equivalent to hibernate.cfg.xml's properties
         Properties settings = new Properties();
         settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-        settings.put(Environment.URL, "jdbc:mysql://localhost:3306/hibernate?serverTimezone=UTC");
+        settings.put(Environment.URL, "jdbc:mysql://localhost:3306/hibernate_tutorial?serverTimezone=UTC");
         settings.put(Environment.USER, "root");
-        settings.put(Environment.PASS, "root");
+        settings.put(Environment.PASS, "Rootpass3#");
         settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
         settings.put(Environment.SHOW_SQL, "true");
         settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
@@ -60,38 +62,44 @@ public class HibernateUtil {
         configuration.setProperties(settings);
 
         // add annotated classes
-        configuration.addAnnotatedClass(Person.class);
 
-        // hibernate types
-        configuration.addAnnotatedClass(Player.class);
+        // crud
+//        configuration.addAnnotatedClass(Person.class);
+//
+//        // hibernate types
+//        configuration.addAnnotatedClass(Player.class);
 
         // one to one
-        configuration.addAnnotatedClass(Employee.class);
+        configuration.addAnnotatedClass(Parking.class);
+        configuration.addAnnotatedClass(Car.class);
+
+        // one to one join
         configuration.addAnnotatedClass(Account.class);
+        configuration.addAnnotatedClass(Employee.class);
 
-        // one to many unidirectional
-        configuration.addAnnotatedClass(Daughter.class);
-        configuration.addAnnotatedClass(Mother.class);
-
-        // one to many unidirectional join
-        configuration.addAnnotatedClass(Father.class);
-        configuration.addAnnotatedClass(Son.class);
-
-        // one to many bidirectional
-        configuration.addAnnotatedClass(Parent.class);
-        configuration.addAnnotatedClass(Child.class);
-
-        // many to many
-        configuration.addAnnotatedClass(Post.class);
-        configuration.addAnnotatedClass(Tag.class);
-
-        // audit
-        configuration.addAnnotatedClass(Customer.class);
-        configuration.addAnnotatedClass(CustomerHistory.class);
-
-        // hql
-        configuration.addAnnotatedClass(Stock.class);
-        configuration.addAnnotatedClass(Trader.class);
+//        // one to many unidirectional
+//        configuration.addAnnotatedClass(Daughter.class);
+//        configuration.addAnnotatedClass(Mother.class);
+//
+//        // one to many unidirectional join
+//        configuration.addAnnotatedClass(Father.class);
+//        configuration.addAnnotatedClass(Son.class);
+//
+//        // one to many bidirectional
+//        configuration.addAnnotatedClass(Parent.class);
+//        configuration.addAnnotatedClass(Child.class);
+//
+//        // many to many
+//        configuration.addAnnotatedClass(Post.class);
+//        configuration.addAnnotatedClass(Tag.class);
+//
+//        // hql
+//        configuration.addAnnotatedClass(Stock.class);
+//        configuration.addAnnotatedClass(Trader.class);
+//
+//        // listeners
+//        configuration.addAnnotatedClass(Customer.class);
+//        configuration.addAnnotatedClass(CustomerHistory.class);
 
         return configuration;
     }

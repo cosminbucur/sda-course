@@ -3,13 +3,17 @@ package com.bucur;
 public class Callbacks {
 
     /*
-        @PrePersist
-        @PostPersist
-        @PostLoad
-        @PreUpdate
-        @PostUpdate
-        @PreRemove
-        @PostRemove
-        @EntityListeners
+        on entity
+            @EntityListeners
+
+        on listener methods
+            @PrePersist
+            @PostPersist
+
+            @PreUpdate
+            @PostUpdate
+
+            @PreRemove
+            @PostRemove
      */
 }

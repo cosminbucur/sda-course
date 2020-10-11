@@ -1,4 +1,4 @@
-package com.bucur.associations.one_to_one;
+package com.bucur.associations.one_to_one_join;
 
 
 import javax.persistence.CascadeType;
@@ -21,17 +21,13 @@ public class Account {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "acc_number")
+    @Column(name = "account_number")
     private String accountNumber;
-
-    @Column(name = "employment_date")
-    private LocalDate employmentDate;
 
     @OneToOne(
         mappedBy = "account",
         cascade = CascadeType.ALL,
-        fetch = FetchType.LAZY,
-        optional = false)
+        fetch = FetchType.LAZY)
     private Employee employee;
 
     public Account() {
@@ -51,14 +47,6 @@ public class Account {
 
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
-    }
-
-    public LocalDate getEmploymentDate() {
-        return employmentDate;
-    }
-
-    public void setEmploymentDate(LocalDate employmentDate) {
-        this.employmentDate = employmentDate;
     }
 
     public Employee getEmployee() {

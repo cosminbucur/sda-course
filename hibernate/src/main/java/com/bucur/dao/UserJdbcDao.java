@@ -105,7 +105,7 @@ public class UserJdbcDao implements UserDao {
 
                 result = new User(name, email, password);
                 result.setId(id);
-                logger.info(result.toString());
+                logger.info("found user " + result);
             }
         } catch (SQLException e) {
             logger.severe("failed to update");
@@ -122,7 +122,6 @@ public class UserJdbcDao implements UserDao {
                 "password = '" + userData.getPassword() +
                 "' WHERE id = " + id;
 
-            // execute
             statement.executeUpdate(sql);
         } catch (SQLException e) {
             logger.severe("failed to update");

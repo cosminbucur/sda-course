@@ -13,25 +13,26 @@ public class DemoTransactionManagement {
 
     public static void main(String[] args) {
         Session session = null;
-        Transaction tx = null;
+        Transaction transaction = null;
 
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            tx = session.beginTransaction();
-            tx.setTimeout(5);
+            transaction = session.beginTransaction();
+            transaction.setTimeout(5);
 
-            // doSomething(session)
             Person person = new Person();
             person.setFirstName("alex");
             session.save(person);
 
-            tx.commit();
+            transaction.commit();
         } catch (RuntimeException e) {
             // any exception thrown by hibernate are FATAL
             // you need to roll back the transaction and
             // close the current session immediately
             try {
-                tx.rollback();
+                if (transaction != null) {
+                    transaction.rollback();
+                }
             } catch (RuntimeException rbe) {
                 logger.severe("could not roll back transaction " + rbe);
             }

@@ -1,4 +1,4 @@
-package com.bucur.audit.history;
+package com.bucur.listeners.history;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "CustomerHistory")
 @Table(name = "customer_history")
 public class CustomerHistory {
 
@@ -72,5 +72,16 @@ public class CustomerHistory {
 
     public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerHistory{" +
+            "id=" + id +
+            ", customerId=" + customerId +
+            ", action=" + action +
+            ", creationDate=" + creationDate +
+            ", modifiedBy='" + modifiedBy + '\'' +
+            '}';
     }
 }

@@ -96,10 +96,10 @@ public class UserJdbcAdvancedDao implements UserDao {
         User result = null;
 
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+             PreparedStatement statement = connection.prepareStatement(sql);
+             ResultSet resultSet = statement.executeQuery()) {
 
             statement.setLong(1, id);
-            ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 String name = resultSet.getString("name");
@@ -109,7 +109,7 @@ public class UserJdbcAdvancedDao implements UserDao {
 
                 result = new User(name, email, password);
                 result.setId(id);
-                logger.info(result.toString());
+                logger.info("found user" + result);
             }
         } catch (SQLException e) {
             logger.severe("failed to update");

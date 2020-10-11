@@ -9,21 +9,19 @@ public class DemoHibernateStates {
 
     public static void main(String[] args) {
 
-        // Transient object state
         Person person = new Person();
         person.setFirstName("jon");
         person.setLastName("snow");
         person.setEmail("jonsnow@gmail.com");
         person.setCountry("westeros");
-
         // Transient object state
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction t = session.beginTransaction();
-        // Persistent object state
-        session.save(person);
 
-        t.commit();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(person);
+        transaction.commit();
         // Persistent object state
+
         session.close();
         // Detached object state
     }

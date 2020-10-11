@@ -9,15 +9,13 @@ public class DemoOneToManyUnidirectional {
         MotherDao motherDao = new MotherDao();
 
         Daughter daughter1 = new Daughter();
-        daughter1.setTitle("daughter1");
+        daughter1.setName("daughter1");
 
         Daughter daughter2 = new Daughter();
-        daughter2.setTitle("daughter2");
+        daughter2.setName("daughter2");
 
         Mother mother = new Mother();
         mother.setName("mother");
-        mother.setEmail("mother@gmail.com");
-        mother.setCountry("motherland");
 
         // add children to parent
 //        mother.getDaughters().add(daughter1);

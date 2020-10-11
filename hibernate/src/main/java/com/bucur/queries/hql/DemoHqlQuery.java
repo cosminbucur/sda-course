@@ -22,6 +22,9 @@ public class DemoHqlQuery {
         System.out.println("--- all stocks: " + stocks);
 
         List<Stock> filteredStocks = stockDao.findAllByStockCodeWithNamedQuery(stock2.getStockCode());
-        System.out.println("--- filtered stocks: " + filteredStocks);
+        System.out.println("--- filteredStocks: " + filteredStocks);
+
+        List<Stock> orderedStocks = stockDao.findAllOrderedByName();
+        System.out.println("--- orderedStocks: " + orderedStocks);
     }
 }

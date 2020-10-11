@@ -6,15 +6,13 @@ public class DemoOneToManyUnidirectionalJoin {
         FatherDao fatherDao = new FatherDao();
 
         Son son1 = new Son();
-        son1.setTitle("son1");
+        son1.setName("son1");
 
         Son son2 = new Son();
-        son2.setTitle("son2");
+        son2.setName("son2");
 
         Father father = new Father();
         father.setName("father");
-        father.setEmail("father@gmail.com");
-        father.setCountry("fatherland");
 
         // add children to parent
         father.getSons().add(son1);

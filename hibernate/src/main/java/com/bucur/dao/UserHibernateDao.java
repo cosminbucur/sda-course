@@ -40,7 +40,7 @@ public class UserHibernateDao implements UserDao {
             // similar to select * from user
             // hibernate query language HQL
             String hql = "from User";
-            Query query = session.createQuery(hql);
+            Query<User> query = session.createQuery(hql, User.class);
             result = query.getResultList();
         } catch (Exception e) {
             logger.severe("failed to find all");
@@ -84,12 +84,8 @@ public class UserHibernateDao implements UserDao {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             User userToDelete = findById(id);
-
             transaction = session.beginTransaction();
-
-            // need an user object with id = ?
             session.delete(userToDelete);
-
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -104,7 +100,7 @@ public class UserHibernateDao implements UserDao {
             transaction = session.beginTransaction();
 
             String hql = "DELETE FROM User";
-            Query query = session.createQuery(hql);
+            Query<User> query = session.createQuery(hql, User.class);
             query.executeUpdate();
 
 //            List<User> allUsers = findAll();

@@ -6,39 +6,27 @@ import org.hibernate.Transaction;
 
 public class FatherDao {
 
-    public void create(Father owner) {
-        Session session = null;
+    public void create(Father father) {
         Transaction transaction = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.save(owner);
+            session.save(father);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
         }
     }
 
     public Father findById(Long id) {
-        Session session = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            Father owner = session.find(Father.class, id);
-            return owner;
+        Father result = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            result = session.find(Father.class, id);
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
-        } finally {
-            if (session != null) {
-                session.close();
-            }
         }
+        return result;
     }
 }

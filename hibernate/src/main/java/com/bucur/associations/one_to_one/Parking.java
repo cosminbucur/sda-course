@@ -1,20 +1,18 @@
-package com.bucur.associations.one_to_many_uni_join;
+package com.bucur.associations.one_to_one;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity(name = "Father")
-@Table(name = "father")
-public class Father {
+@Entity(name = "Parking")
+@Table(name = "parking")
+public class Parking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,13 +22,10 @@ public class Father {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(
-        cascade = CascadeType.ALL,
-        orphanRemoval = true)
-    @JoinColumn(name = "father_id")
-    private List<Son> sons = new ArrayList<>();
+    @OneToOne
+    private Car car;
 
-    public Father() {
+    public Parking() {
     }
 
     public Long getId() {
@@ -49,11 +44,11 @@ public class Father {
         this.name = name;
     }
 
-    public List<Son> getSons() {
-        return sons;
+    public Car getCar() {
+        return car;
     }
 
-    public void setSons(List<Son> sons) {
-        this.sons = sons;
+    public void setCar(Car car) {
+        this.car = car;
     }
 }

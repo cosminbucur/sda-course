@@ -1,4 +1,4 @@
-package com.bucur.audit.customer;
+package com.bucur.listeners.customer;
 
 import com.bucur.config.HibernateUtil;
 import org.hibernate.Session;

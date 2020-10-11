@@ -27,19 +27,19 @@ public class PersonDao {
     }
 
     public Person findById(Long id) {
+        Person result = null;
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            Person person = session.find(Person.class, id);
-            return person;
+            result = session.find(Person.class, id);
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         } finally {
             if (session != null) {
                 session.close();
             }
         }
+        return result;
     }
 
     public void update(Person person) {

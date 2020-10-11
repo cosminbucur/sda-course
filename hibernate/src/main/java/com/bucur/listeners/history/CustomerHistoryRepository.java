@@ -1,16 +1,21 @@
-package com.bucur.associations.many_to_many;
+package com.bucur.listeners.history;
 
 import com.bucur.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
-public class PostDao {
+import java.util.ArrayList;
+import java.util.List;
 
-    public void create(Post post) {
+public class CustomerHistoryRepository {
+
+    public void create(CustomerHistory customerHistory) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
             transaction = session.beginTransaction();
-            session.save(post);
+            session.save(customerHistory);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -20,13 +25,16 @@ public class PostDao {
         }
     }
 
-    public Post findById(Long id) {
-        Post result = null;
+    public List<CustomerHistory> findAll() {
+        List<CustomerHistory> result = new ArrayList<>();
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            result = session.find(Post.class, id);
+
+            Query<CustomerHistory> query = session.createQuery("FROM CustomerHistory", CustomerHistory.class);
+            result = query.getResultList();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return result;
     }
+
 }

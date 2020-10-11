@@ -9,11 +9,10 @@ import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
-@NamedNativeQueries({
-    @NamedNativeQuery(
-        name = "findTradersByNameNativeSQL",
-        query = "SELECT * FROM trader t WHERE t.name = :name",
-        resultClass = Trader.class)})
+@NamedNativeQuery(
+    name = "Trader.findByName",
+    query = "SELECT * FROM trader t WHERE t.name = :name",
+    resultClass = Trader.class)
 @Entity(name = "Trader")
 @Table(name = "trader")
 public class Trader {

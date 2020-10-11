@@ -1,4 +1,4 @@
-package com.bucur.associations.one_to_one_better;
+package com.bucur.associations.one_to_one_join;
 
 
 import javax.persistence.Column;
@@ -22,12 +22,6 @@ public class Employee {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
     @OneToOne
     @JoinColumn(name = "account_id")
     private Account account;
@@ -49,22 +43,6 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public Account getAccount() {

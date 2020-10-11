@@ -1,7 +1,6 @@
 package com.bucur.dao;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,19 +8,15 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserDaoIntegrationTest {
+class UserDaoIntegrationTest {
 
     public UserDao userDao = new UserHibernateDao();
-//    public UserDao userDao = new UserJdbcAdvancedDao();
-//    public UserDao userDao = new UserJdbcDao();
+    public UserDao userDao1 = new UserJdbcAdvancedDao();
+    public UserDao userDao2 = new UserJdbcDao();
+    public UserJpaDao userDao3 = new UserJpaDao();
 
     @BeforeEach
     void setUp() {
-        userDao.deleteAll();
-    }
-
-    @AfterEach
-    void afterEach() {
         userDao.deleteAll();
     }
 
@@ -92,10 +87,8 @@ public class UserDaoIntegrationTest {
     @Test
     void givenState_whenMethodUnderTest_thenResult() {
         // given
-        User user = new User("alex", "alex@gmail.com", "secret");
 
         // when
-        userDao.create(user);
 
         // then
     }

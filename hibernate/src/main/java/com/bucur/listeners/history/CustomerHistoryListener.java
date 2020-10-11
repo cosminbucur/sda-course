@@ -1,15 +1,15 @@
-package com.bucur.audit.history;
+package com.bucur.listeners.history;
 
-import com.bucur.audit.customer.Customer;
+import com.bucur.listeners.customer.Customer;
 
 import javax.persistence.PostPersist;
 import javax.persistence.PostRemove;
 import javax.persistence.PostUpdate;
 import java.time.LocalDateTime;
 
-import static com.bucur.audit.history.Action.DELETED;
-import static com.bucur.audit.history.Action.INSERTED;
-import static com.bucur.audit.history.Action.UPDATED;
+import static com.bucur.listeners.history.Action.DELETED;
+import static com.bucur.listeners.history.Action.INSERTED;
+import static com.bucur.listeners.history.Action.UPDATED;
 
 public class CustomerHistoryListener {
 

@@ -20,8 +20,8 @@ public class Child {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "name")
+    private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
@@ -38,12 +38,12 @@ public class Child {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Parent getParent() {
@@ -60,12 +60,12 @@ public class Child {
         if (o == null || getClass() != o.getClass()) return false;
         Child child = (Child) o;
         return Objects.equals(id, child.id) &&
-            Objects.equals(title, child.title) &&
+            Objects.equals(name, child.name) &&
             Objects.equals(parent, child.parent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, parent);
+        return Objects.hash(id, name, parent);
     }
 }

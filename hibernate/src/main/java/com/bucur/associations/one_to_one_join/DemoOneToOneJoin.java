@@ -1,20 +1,15 @@
-package com.bucur.associations.one_to_one_better;
+package com.bucur.associations.one_to_one_join;
 
-import java.time.LocalDate;
-
-public class DemoOneToOne {
+public class DemoOneToOneJoin {
 
     public static void main(String[] args) {
         AccountDao accountDao = new AccountDao();
 
         Employee employee = new Employee();
-        employee.setFirstName("jon");
-        employee.setLastName("snow");
         employee.setEmail("jonsnow@gmail.com");
 
         Account account = new Account();
-        account.setAccountNumber("12");
-        account.setEmploymentDate(LocalDate.now());
+        account.setAccountNumber("200");
         account.setEmployee(employee);
 
         employee.setAccount(account);

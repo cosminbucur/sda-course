@@ -1,6 +1,6 @@
-package com.bucur.audit.customer;
+package com.bucur.listeners.customer;
 
-import com.bucur.audit.history.CustomerHistoryListener;
+import com.bucur.listeners.history.CustomerHistoryListener;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer")
+// needed to react to listeners
 @EntityListeners(CustomerHistoryListener.class)
 public class Customer {
 
