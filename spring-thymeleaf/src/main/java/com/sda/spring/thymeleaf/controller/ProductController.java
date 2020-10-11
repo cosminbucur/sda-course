@@ -7,72 +7,80 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+// mvc controller
 @Controller
 public class ProductController {
 
     private static final Logger log = LoggerFactory.getLogger(ProductController.class);
 
-    private final ProductService productService;
+    private ProductService productService;
 
     @Autowired
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
 
-    // products -> index
-    @RequestMapping(value = "/products", method = RequestMethod.GET)
-    public String viewProductsPage(Model model) {
-        log.info("List all products...");
+    @GetMapping("/products")
+    public String showProductsPage(Model model) {
+        log.info("Show products page");
+        // get data
+        List<Product> foundProducts = productService.findAll();
 
-        // get list
-        List<Product> products = productService.findAll();
-
-        // add list to model
-        model.addAttribute("products", products);
+        // put data on model to have it available in html
+        model.addAttribute("products", foundProducts);
 
         return "index";
     }
 
-    @RequestMapping(value = "/new", method = RequestMethod.GET)
+    @GetMapping("/new")
     public String showNewProductPage(Model model) {
-        log.info("Show new product page...");
+        log.info("Show new product page");
 
         Product product = new Product();
         model.addAttribute("product", product);
-        return "new_product";
+
+        return "product-add";
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @PostMapping("/save")
     public String saveProduct(
-        @ModelAttribute("product") Product product
-    ) {
-        log.info("Save new product...");
+        @ModelAttribute("product") Product product) {
+
+        log.info("action: save new product");
         productService.save(product);
 
         return "redirect:/products";
     }
 
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
-        log.info("Edit product with id {}", id);
-        ModelAndView modelAndView = new ModelAndView("edit_product");
-        Product product = productService.findById(id);
-        modelAndView.addObject("product", product);
+    @GetMapping("/edit/{id}")
+    public ModelAndView showEditProductPage(
+        @PathVariable(name = "id") int id) {
+
+        log.info("show edit product page");
+        // find product
+        Product foundProduct = productService.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("no such id " + id));
+
+        // add product to ModelAndView
+        ModelAndView modelAndView = new ModelAndView("product-edit");
+        modelAndView.addObject("product", foundProduct);
 
         return modelAndView;
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String deleteProduct(@PathVariable(name = "id") int id) {
-        log.info("Delete product with id {}", id);
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(
+        @PathVariable(name = "id") long id) {
+
+        log.info("delete product with id {}", id);
         productService.delete(id);
 
         return "redirect:/products";

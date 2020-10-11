@@ -7,9 +7,12 @@
 </head>
 <body>
 <div align="center">
-    <h1>Product List</h1>
+    <h1>Product list</h1>
+
+    <!--  navigate to new product page  -->
     <a href="/new">Create New Product</a>
     <br/><br/>
+
     <table border="1" cellpadding="10">
         <thead>
         <tr>
@@ -21,12 +24,16 @@
         </thead>
 
         <tbody>
+        <!-- iterate products and create an element for each product -->
         <tr th:each="product : ${products}">
             <td th:text="${product.id}">Product ID</td>
             <td th:text="${product.name}">Name</td>
             <td th:text="${product.price}">Price</td>
             <td>
+                <!--  navigate to edit page  -->
                 <a th:href="@{/edit/{id}(id=${product.id})}">Edit</a>
+
+                <!--  delete and navigate to product  -->
                 <a th:href="@{/delete/{id}(id=${product.id})}">Delete</a>
             </td>
         </tr>
@@ -34,4 +41,3 @@
     </table>
 </div>
 </body>
-</html>
