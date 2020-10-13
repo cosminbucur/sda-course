@@ -12,18 +12,24 @@
     <artifactId>spring-mvc-hibernate</artifactId>
     <packaging>war</packaging>
 
+    <properties>
+        <tomcat-embed-jasper.version>9.0.27</tomcat-embed-jasper.version>
+        <javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version>
+        <taglibs-standard-impl.version>1.2.5</taglibs-standard-impl.version>
+    </properties>
+
     <dependencies>
-        <!--        persistence-->
+        <!-- persistence -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>2.2.1.RELEASE</version>
+            <version>${spring-data.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>5.2.1.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
@@ -32,17 +38,17 @@
             <version>5.4.8.Final</version>
         </dependency>
 
-        <!--        web-->
+        <!-- web -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>5.2.1.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.2.1.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
 
         <!--        <dependency>-->
@@ -51,59 +57,54 @@
         <!--            <version>3.0.11.RELEASE</version>-->
         <!--        </dependency>-->
 
-        <!--        jsp-->
+        <!-- jsp -->
 
         <!-- Tomcat for JSP rendering -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-            <version>9.0.27</version>
+            <version>${tomcat-embed-jasper.version}</version>
         </dependency>
-
-        <!--        <dependency>-->
-        <!--            <groupId>javax.servlet.jsp.jstl</groupId>-->
-        <!--            <artifactId>jstl</artifactId>-->
-        <!--            <version>1.2</version>-->
-        <!--        </dependency>-->
 
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>2.3.3</version>
+            <version>${javax.servlet.jsp-api.version}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.taglibs</groupId>
             <artifactId>taglibs-standard-impl</artifactId>
-            <version>1.2.5</version>
+            <version>${taglibs-standard-impl.version}</version>
         </dependency>
 
-        <!--        db-->
+        <!-- db -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.200</version>
+            <version>${h2.version}</version>
             <scope>runtime</scope>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>mysql</groupId>-->
-        <!--            <artifactId>mysql-connector-java</artifactId>-->
-        <!--            <version>8.0.18</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
 
-        <!--        utils-->
+        <!-- utils -->
+
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>6.1.0.Final</version>
+            <version>${hibernate-validator.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>4.3.1</version>
+            <version>${bootstrap.version}</version>
         </dependency>
 
     </dependencies>

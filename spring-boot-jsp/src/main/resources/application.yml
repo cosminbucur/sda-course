@@ -2,8 +2,7 @@ server:
   port: 8081
 
 spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
-    static-path-pattern: /resources/**
+  view:
+    prefix: /WEB-INF/jsp/
+    suffix: .jsp
+  static-path-pattern: /resources/**

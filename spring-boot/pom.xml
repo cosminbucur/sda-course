@@ -3,8 +3,6 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <artifactId>spring-boot</artifactId>
-
     <parent>
         <artifactId>parent-boot-2</artifactId>
         <groupId>com.sda</groupId>
@@ -12,6 +10,8 @@
         <relativePath>../parent-boot-2</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-boot</artifactId>
 
     <dependencies>
         <dependency>

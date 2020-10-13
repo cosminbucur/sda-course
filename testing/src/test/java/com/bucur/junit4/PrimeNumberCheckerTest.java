@@ -7,11 +7,13 @@ import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class PrimeNumberCheckerTest {
+
     private Integer inputNumber;
     private Boolean expectedResult;
     private PrimeNumberChecker primeNumberChecker;
@@ -26,14 +28,15 @@ public class PrimeNumberCheckerTest {
     // from parameters we defined in primeNumbers() method
 
     @Parameterized.Parameters
-    public static Collection primeNumbers() {
-        return Arrays.asList(new Object[][]{
+    public static List<Object[]> primeNumbers() {
+        Object[][] combinations = {
             {2, true},
             {6, false},
             {19, true},
             {22, false},
             {23, true}
-        });
+        };
+        return Arrays.asList(combinations);
     }
 
     @Before

@@ -13,21 +13,35 @@
     <artifactId>spring-boot-mvc-jsp</artifactId>
     <packaging>war</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <hibernate.version>5.4.22.Final</hibernate.version>
+        <h2.version>1.4.200</h2.version>
+        <mysql.version>8.0.18</mysql.version>
+
+        <junit.version>5.7.0</junit.version>
+        <assertj.version>3.17.2</assertj.version>
+        <mockito.version>3.5.13</mockito.version>
+        <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
+        <bootstrap.version>4.3.1</bootstrap.version>
+    </properties>
+
     <dependencies>
-        <!--        persistence-->
+        <!-- persistence -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>2.2.1.RELEASE</version>
+            <version>${spring-boot.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>2.2.1.RELEASE</version>
+            <version>${spring-boot.version}</version>
         </dependency>
 
-        <!--        web-->
+        <!-- web -->
         <!-- Tomcat for JSP rendering -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
@@ -38,13 +52,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.2.1.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>2.2.1.RELEASE</version>
+            <version>${spring-boot.version}</version>
         </dependency>
 
         <dependency>
@@ -69,33 +77,34 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.200</version>
+            <version>${h2.version}</version>
             <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.18</version>
+            <version>${mysql.version}</version>
         </dependency>
 
-        <!--        utils-->
+        <!-- utils -->
+
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
-            <version>2.0.1.Final</version>
+            <version>${javax-validator.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>6.1.0.Final</version>
+            <version>${hibernate-validator.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>4.3.1</version>
+            <version>${bootstrap.version}</version>
         </dependency>
 
     </dependencies>
@@ -108,13 +117,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>5.2.1.RELEASE</spring.version>
-        <junit.version>4.12</junit.version>
-        <servlet.version>3.1.0</servlet.version>
-        <mysql.connector.version>5.1.9</mysql.connector.version>
-    </properties>
 
 </project>

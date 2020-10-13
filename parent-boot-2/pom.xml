@@ -15,6 +15,16 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <mysql.version>8.0.21</mysql.version>
+        <h2.version>1.4.200</h2.version>
+        <javax-validator.version>2.0.1.Final</javax-validator.version>
+        <hibernate-validator.version>6.1.6.Final</hibernate-validator.version>
+        <bootstrap.version>4.3.1</bootstrap.version>
+    </properties>
+
+    <!-- plugins -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -52,10 +62,5 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <properties>
-        <!-- plugins -->
-        <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
-    </properties>
 
 </project>

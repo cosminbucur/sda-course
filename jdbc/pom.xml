@@ -12,11 +12,13 @@
     <artifactId>jdbc</artifactId>
 
     <dependencies>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.21</version>
+            <version>${mysql.version}</version>
         </dependency>
+
     </dependencies>
 
 </project>

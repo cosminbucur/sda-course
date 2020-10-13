@@ -16,8 +16,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -25,10 +25,29 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- sets the compiler to use java 8 version -->
+        <!--        <maven.compiler.target>1.8</maven.compiler.target>-->
+        <!--        <maven.compiler.source>1.8</maven.compiler.source>-->
+
+        <spring.version>5.2.9.RELEASE</spring.version>
+
+        <spring-data.version>2.3.4.RELEASE</spring-data.version>
+        <hibernate.version>5.4.22.Final</hibernate.version>
+        <h2.version>1.4.200</h2.version>
+        <mysql.version>8.0.18</mysql.version>
+
+        <jackson.version>2.11.2</jackson.version>
+
+        <junit.version>5.7.0</junit.version>
+        <junit-old.version>4.13</junit-old.version>
+        <assertj.version>3.17.2</assertj.version>
+        <mockito.version>3.5.13</mockito.version>
+        <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
+        <bootstrap.version>4.3.1</bootstrap.version>
     </properties>
 
     <modules>
-
         <module>fundamentals</module>
         <module>testing</module>
         <module>java-advanced</module>
@@ -61,5 +80,33 @@
         <module>jvm</module>
         <module>networking</module>
     </modules>
+
+    <dependencies>
+
+        <!-- testing framework -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- fluent assertions -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- mocking framework -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 
 </project>
