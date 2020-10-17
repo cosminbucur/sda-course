@@ -22,14 +22,12 @@ public class MyAccessDeniedHandler implements AccessDeniedHandler {
     @Override
     public void handle(HttpServletRequest httpServletRequest,
                        HttpServletResponse httpServletResponse,
-                       AccessDeniedException e) throws IOException, ServletException {
+                       AccessDeniedException e) throws IOException {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (auth != null) {
-            log.info("User '" + auth.getName()
-                + "' attempted to access the protected URL: "
-                + httpServletRequest.getRequestURI());
+            log.info("User {} attempted to access the protected URL: {}", auth.getName(), httpServletRequest.getRequestURI());
         }
 
         httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/403");

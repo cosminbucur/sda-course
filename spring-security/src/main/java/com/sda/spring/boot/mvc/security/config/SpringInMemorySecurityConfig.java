@@ -2,18 +2,11 @@ package com.sda.spring.boot.mvc.security.config;
 
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-//@EnableWebSecurity
+@EnableWebSecurity
 public class SpringInMemorySecurityConfig extends WebSecurityConfigurerAdapter {
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-
-        http.authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER")
-            .and()
-            .httpBasic(); // Use Basic authentication
-    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -27,4 +20,12 @@ public class SpringInMemorySecurityConfig extends WebSecurityConfigurerAdapter {
             .password("{noop}pass")
             .roles("USER");
     }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().anyRequest().hasAnyRole("ADMIN", "USER")
+            .and()
+            .httpBasic(); // Use Basic authentication
+    }
+
 }
