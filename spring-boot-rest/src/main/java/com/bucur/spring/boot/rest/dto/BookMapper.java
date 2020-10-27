@@ -26,7 +26,7 @@ public class BookMapper {
         return book;
     }
 
-    public void map(Book updateRequest, Book bookToUpdate) {
+    public Book toEntity(Book bookToUpdate, BookRequest updateRequest) {
         if (!StringUtils.isEmpty(updateRequest.getTitle())) {
             bookToUpdate.setTitle(updateRequest.getTitle());
         }
@@ -38,5 +38,6 @@ public class BookMapper {
         if (updateRequest.getPublished() != null && updateRequest.getPublished().isBefore(LocalDate.now())) {
             bookToUpdate.setPublished(updateRequest.getPublished());
         }
+        return bookToUpdate;
     }
 }

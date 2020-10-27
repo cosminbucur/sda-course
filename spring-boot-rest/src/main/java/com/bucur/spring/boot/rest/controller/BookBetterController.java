@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:8082")
-@RequestMapping(BookBetterController.API_BOOKS)
-@RestController
+//@CrossOrigin(origins = "http://localhost:8082")
+//@RequestMapping(BookBetterController.API_BOOKS)
+//@RestController
 public class BookBetterController {
 
     public static final String API_BOOKS = "/api/books";
