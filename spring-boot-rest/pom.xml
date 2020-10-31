@@ -48,6 +48,14 @@
             <version>${mysql.version}</version>
         </dependency>
 
+        <!-- security -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
         <!-- utils -->
 
         <dependency>
