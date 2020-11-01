@@ -64,7 +64,7 @@ public class HibernateUtil {
         // add annotated classes
 
         // crud
-//        configuration.addAnnotatedClass(Person.class);
+        configuration.addAnnotatedClass(Person.class);
 //
 //        // hibernate types
 //        configuration.addAnnotatedClass(Player.class);
