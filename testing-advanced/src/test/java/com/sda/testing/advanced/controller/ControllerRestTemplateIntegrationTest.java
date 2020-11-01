@@ -1,7 +1,7 @@
 package com.sda.testing.advanced.controller;
 
 import com.sda.testing.advanced.SpringTestingApplication;
-import com.sda.testing.advanced.config.H2TestProfileJPAConfig;
+import com.sda.testing.advanced.config.H2TestProfileJpaConfig;
 import com.sda.testing.advanced.dto.BookRequest;
 import com.sda.testing.advanced.dto.BookResponse;
 import com.sda.testing.advanced.service.BookService;
@@ -24,14 +24,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,
-    classes = {SpringTestingApplication.class, H2TestProfileJPAConfig.class}
+    classes = {SpringTestingApplication.class, H2TestProfileJpaConfig.class}
 )
 class ControllerRestTemplateIntegrationTest {
 
-    private static final String API_BOOKS = "/books";
     @LocalServerPort
-    private static int port = 8083;
-    private static final String BASE_URI = "http://localhost:" + port + "/api";
+    static final int port = 8083;
+    static final String API_BOOKS = "/books";
+    static final String BASE_URI = "http://localhost:" + port + "/api";
+
     @Autowired
     private TestRestTemplate restTemplate;
 

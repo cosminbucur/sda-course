@@ -20,10 +20,10 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Profile("test")
-@EnableJpaRepositories(basePackages = H2TestProfileJPAConfig.REPOSITORY_PACKAGE)
+@EnableJpaRepositories(basePackages = H2TestProfileJpaConfig.REPOSITORY_PACKAGE)
 @EnableTransactionManagement
 @Configuration
-public class H2TestProfileJPAConfig {
+public class H2TestProfileJpaConfig {
 
     public static final String MODEL_PACKAGE = "com.sda.testing.advanced.model";
     public static final String REPOSITORY_PACKAGE = "com.sda.testing.advanced.repository";

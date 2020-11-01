@@ -1,7 +1,7 @@
 package com.sda.testing.advanced.controller;
 
 import com.sda.testing.advanced.SpringTestingApplication;
-import com.sda.testing.advanced.config.H2TestProfileJPAConfig;
+import com.sda.testing.advanced.config.H2TestProfileJpaConfig;
 import com.sda.testing.advanced.dto.BookRequest;
 import com.sda.testing.advanced.service.BookService;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +14,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.time.LocalDate;
 
@@ -21,15 +23,17 @@ import java.time.LocalDate;
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
 @SpringBootTest(
-    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-    classes = {SpringTestingApplication.class, H2TestProfileJPAConfig.class}
+    webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,
+    classes = {SpringTestingApplication.class, H2TestProfileJpaConfig.class}
 )
 class ControllerMockMvcIntegrationTest {
 
-    private static final String API_BOOKS = "/books";
     @LocalServerPort
-    private static int port = 8083;
+    private static final int port = 8083;
+
+    private static final String API_BOOKS = "/books";
     private static final String BASE_URI = "http://localhost:" + port + "/api";
+
     @Autowired
     private MockMvc mockMvc;
 
@@ -45,18 +49,23 @@ class ControllerMockMvcIntegrationTest {
     }
 
     @Test
-    void givenRequest_whenFindAll_thenReturn200() {
+    void givenRequest_whenFindAll_thenReturn200() throws Exception {
         BookRequest request = new BookRequest();
         request.setTitle("game of thrones");
         request.setAuthor("george martin");
         request.setPublished(LocalDate.of(2000, 6, 30));
         bookService.save(request);
 
-//        mockMvc.perform()
-
-//        assertThat(response.getStatusCode().value()).isEqualTo(200);
-//        assertThat(response.getHeaders().get("Content-Type").get(0)).isEqualTo("application/json");
-//        assertThat(response.getBody()[0].getTitle()).isEqualTo("game of thrones");
+        mockMvc.perform(
+            MockMvcRequestBuilders.get(BASE_URI + "/" + API_BOOKS)).
+            andExpect(MockMvcResultMatchers.status().isOk()).
+            andExpect(MockMvcResultMatchers.content()
+                .string("[" +
+                    "{\"id\":1," +
+                    "\"title\":\"game of thrones\"," +
+                    "\"author\":\"george martin\"," +
+                    "\"published\":\"2000-06-30\"" +
+                    "}]"));
     }
 
     @Test

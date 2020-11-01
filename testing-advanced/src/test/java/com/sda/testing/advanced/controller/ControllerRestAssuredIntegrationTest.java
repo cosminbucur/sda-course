@@ -1,7 +1,7 @@
 package com.sda.testing.advanced.controller;
 
 import com.sda.testing.advanced.SpringTestingApplication;
-import com.sda.testing.advanced.config.H2TestProfileJPAConfig;
+import com.sda.testing.advanced.config.H2TestProfileJpaConfig;
 import com.sda.testing.advanced.dto.BookRequest;
 import com.sda.testing.advanced.service.BookService;
 import io.restassured.RestAssured;
@@ -24,15 +24,17 @@ import static org.hamcrest.Matchers.equalTo;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-    classes = {SpringTestingApplication.class, H2TestProfileJPAConfig.class}
+    classes = {SpringTestingApplication.class, H2TestProfileJpaConfig.class}
 )
 class ControllerRestAssuredIntegrationTest {
 
     private static final String API_BOOKS = "/books";
+
     @LocalServerPort
-    private int port;
+    public int port;
+
     @Autowired
-    private BookService bookService;
+    BookService bookService;
 
     @BeforeEach
     void setUp() {
