@@ -1,23 +1,9 @@
 package com.bucur.config;
 
-import com.bucur.associations.many_to_many.Post;
-import com.bucur.associations.many_to_many.Tag;
-import com.bucur.associations.one_to_many_bi.Child;
-import com.bucur.associations.one_to_many_bi.Parent;
-import com.bucur.associations.one_to_many_uni.Daughter;
-import com.bucur.associations.one_to_many_uni.Mother;
-import com.bucur.associations.one_to_many_uni_join.Father;
-import com.bucur.associations.one_to_many_uni_join.Son;
-import com.bucur.associations.one_to_one.Car;
-import com.bucur.associations.one_to_one.Parking;
 import com.bucur.associations.one_to_one_join.Account;
 import com.bucur.associations.one_to_one_join.Employee;
-import com.bucur.listeners.customer.Customer;
-import com.bucur.listeners.history.CustomerHistory;
-import com.bucur.crud.Person;
-import com.bucur.queries.hql.Stock;
-import com.bucur.queries.native_query.Trader;
-import com.bucur.types.Player;
+import com.bucur.queries.hql_join.Author;
+import com.bucur.queries.hql_join.Book;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -64,19 +50,19 @@ public class HibernateUtil {
         // add annotated classes
 
         // crud
-        configuration.addAnnotatedClass(Person.class);
+//        configuration.addAnnotatedClass(Person.class);
 //
 //        // hibernate types
 //        configuration.addAnnotatedClass(Player.class);
-
-        // one to one
-        configuration.addAnnotatedClass(Parking.class);
-        configuration.addAnnotatedClass(Car.class);
-
-        // one to one join
+//
+//        // one to one
+//        configuration.addAnnotatedClass(Parking.class);
+//        configuration.addAnnotatedClass(Car.class);
+//
+//        // one to one join
         configuration.addAnnotatedClass(Account.class);
         configuration.addAnnotatedClass(Employee.class);
-
+//
 //        // one to many unidirectional
 //        configuration.addAnnotatedClass(Daughter.class);
 //        configuration.addAnnotatedClass(Mother.class);
@@ -96,6 +82,9 @@ public class HibernateUtil {
 //        // hql
 //        configuration.addAnnotatedClass(Stock.class);
 //        configuration.addAnnotatedClass(Trader.class);
+
+        configuration.addAnnotatedClass(Author.class);
+        configuration.addAnnotatedClass(Book.class);
 //
 //        // listeners
 //        configuration.addAnnotatedClass(Customer.class);

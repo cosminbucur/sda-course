@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 //import org.junit.Test;
 
-class DemoEx1Test {
+class DemoLambdaTest {
 
     @Test
     public void given1PassedAnd1Grade4_shouldFail() {

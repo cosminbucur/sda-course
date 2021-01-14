@@ -8,6 +8,8 @@ import java.util.function.Supplier;
  * take any arguments. It is typically used for lazy generation of values.
  * This can be useful if the generation of this argument takes a considerable amount of time
  */
+
+// https://mkyong.com/java8/java-8-supplier-examples/
 public class DemoSupplier {
 
     public static void main(String[] args) {

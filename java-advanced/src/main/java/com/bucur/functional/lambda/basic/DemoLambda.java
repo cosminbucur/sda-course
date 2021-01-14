@@ -1,4 +1,4 @@
-package com.bucur.functional.lambda.ex1;
+package com.bucur.functional.lambda.basic;
 
 import java.util.function.Function;
 
@@ -7,7 +7,7 @@ interface MyFunctionalInterface {
     String doOneThing(String myString);
 }
 
-public class DemoEx1 {
+public class DemoLambda {
 
     public static void main(String[] args) {
         Runnable runnable = new Runnable() {

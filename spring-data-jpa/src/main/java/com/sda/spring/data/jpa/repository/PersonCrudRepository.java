@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface PersonCrudRepository extends CrudRepository<Person, Long> {
 
-    Optional<Person> findByName(String name);
+    // derived query
+    Optional<Person> findByName(String name);   // select * from person where name = :name
 
 }
