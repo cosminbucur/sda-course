@@ -12,9 +12,7 @@ public class DemoFunctionalInterfaceHard {
     }
 
     private static void interfacesWithDefaultAndStaticMethods() {
-        Printable printable = (String text) -> {
-            System.out.println(text);
-        };
+        Printable printable = (String text) -> System.out.println(text);
         printable.printIt("print it");
         printable.printUtf8To("print utf8", new OutputStream() {
             @Override
