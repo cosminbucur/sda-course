@@ -10,7 +10,7 @@ public class DemoHowLists {
 
     public static void main(String[] args) {
         // create a list
-        List<String> countries = new ArrayList();
+        List<String> countries = new ArrayList<>();
 
         CollectionPrinter.printList(countries);
 
@@ -22,6 +22,7 @@ public class DemoHowLists {
         countries.add("italy");
         countries.add("china");
         countries.add("korea");
+        countries.add("england");
 
         // READ
 
@@ -45,7 +46,6 @@ public class DemoHowLists {
 
         // change the country at index
         countries.add(0, "");
-
 
         System.out.println("before remove: ");
         CollectionPrinter.printList(countries);

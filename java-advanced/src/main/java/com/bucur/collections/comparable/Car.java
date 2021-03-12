@@ -2,14 +2,18 @@ package com.bucur.collections.comparable;
 
 public class Car implements Comparable<Car> {
 
-    private int maxSpeed;
+    private int fabricationYear;
 
-    public Car(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public Car(int fabricationYear) {
+        this.fabricationYear = fabricationYear;
     }
 
     @Override
     public int compareTo(Car otherCar) {
-        return this.maxSpeed - otherCar.maxSpeed;
+        return this.fabricationYear - otherCar.fabricationYear;
+    }
+
+    public int getFabricationYear() {
+        return fabricationYear;
     }
 }

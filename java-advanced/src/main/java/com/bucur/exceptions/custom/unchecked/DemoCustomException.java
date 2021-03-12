@@ -1,8 +1,8 @@
-package com.bucur.exceptions.custom;
+package com.bucur.exceptions.custom.unchecked;
 
 public class DemoCustomException {
 
-    public static void main(String[] args) throws CarCrashedException {
+    public static void main(String[] args) {
         Car car = new Car();
 
         car.increaseSpeed();    // 0 to 70
