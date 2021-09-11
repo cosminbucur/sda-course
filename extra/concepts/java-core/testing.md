@@ -28,5 +28,3 @@ test a that a void method has been called once using verify()
 ### assertj
 
 use as many fluent assertions as possible
-
-

@@ -13,6 +13,10 @@
     <packaging>war</packaging>
 
     <properties>
+        <h2.version>1.4.200</h2.version>
+        <javax-validator.version>2.0.1.Final</javax-validator.version>
+        <hibernate-validator.version>6.1.6.Final</hibernate-validator.version>
+
         <tomcat-embed-jasper.version>9.0.27</tomcat-embed-jasper.version>
         <javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version>
         <taglibs-standard-impl.version>1.2.5</taglibs-standard-impl.version>
@@ -93,6 +97,12 @@
         </dependency>
 
         <!-- utils -->
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax-validator.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.hibernate.validator</groupId>

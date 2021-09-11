@@ -13,15 +13,13 @@
     <description>Parent for all Spring Boot 2 modules</description>
 
     <artifactId>parent-boot-2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
-        <mysql.version>8.0.21</mysql.version>
-        <h2.version>1.4.200</h2.version>
-        <javax-validator.version>2.0.1.Final</javax-validator.version>
-        <hibernate-validator.version>6.1.6.Final</hibernate-validator.version>
-        <bootstrap.version>4.3.1</bootstrap.version>
+        <spring-boot.version>2.4.2</spring-boot.version>
+        <bootstrap.version>5.1.0</bootstrap.version>
+        <webjars-locator.version>0.42</webjars-locator.version>
+        <font-awesome.version>5.15.4</font-awesome.version>
     </properties>
 
     <!-- used when project has a parent other than spring parent -->

@@ -1,6 +1,6 @@
-### oop (object oriented programming)
+### oop (object-oriented programming)
 
-1. use drawio (https://www.draw.io/) and create "building blocks" with concepts for the following topics
+1. use diagrams.net (https://www.diagrams.net/) and create "building blocks" with concepts for the following topics
 
         git
 
@@ -42,14 +42,11 @@
 - use throws in a method signature and call that method
 - write a custom exception and throw it
 
-solve ex 1, 2 / pag 51 (sda slides)
-
 ### generic types
 
 - write a generic class that can take any type of object (set an object using constructor or setter)
 - write a generic class with a restrictive type
 - compare two objects using Comparable
-- solve ex 1, 2 / pag 61 (sda slides)
 
 ## collections
 
@@ -66,12 +63,9 @@ solve ex 1, 2 / pag 51 (sda slides)
         for
         enhanced for
 
-- solve ex 1, 2, 3 / pag 68 (sda slides)
-
 ### set
 
 - iterate set
-- solve ex 1, 2, 3 / pag 71 (sda slides)
 
 ### map
 
