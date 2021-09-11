@@ -17,9 +17,9 @@ import java.util.List;
 public class BookService {
 
     private static final Logger log = LoggerFactory.getLogger(BookService.class);
-    private BookRepository bookRepository;
-    private BookMapper bookMapper;
-    private ObjectMapper jacksonObjectMapper;
+    private final BookRepository bookRepository;
+    private final BookMapper bookMapper;
+    private final ObjectMapper jacksonObjectMapper;
 
     @Autowired
     public BookService(BookRepository bookRepository, BookMapper bookMapper, ObjectMapper jacksonObjectMapper) {

@@ -1,7 +1,6 @@
 package com.sda.spring.data.jpa.validation;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 
 @Entity(name = "User")
 @Table(name = "user")
@@ -10,30 +9,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @NotEmpty(message = "name cannot be empty")
     private String name;
-
-    @Email(message = "email invalid format")
     private String email;
-
-    @AssertTrue(message = "consent must be accepted")
-    private boolean consent;
-
-    @Size(min = 10, max = 100, message =
-        "description should be between 10 - 100 characters")
+    private boolean consented;
     private String aboutMe;
-
-    @Min(value = 18, message = "age should be at least 18")
-    @Max(value = 80, message = "age should be maximum 80")
     private int age;
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -52,12 +35,12 @@ public class User {
         this.email = email;
     }
 
-    public boolean isConsent() {
-        return consent;
+    public boolean isConsented() {
+        return consented;
     }
 
-    public void setConsent(boolean consent) {
-        this.consent = consent;
+    public void setConsented(boolean consented) {
+        this.consented = consented;
     }
 
     public String getAboutMe() {
@@ -79,12 +62,12 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", email='" + email + '\'' +
-            ", consent=" + consent +
-            ", aboutMe='" + aboutMe + '\'' +
-            ", age=" + age +
-            '}';
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", consent=" + consented +
+                ", aboutMe='" + aboutMe + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

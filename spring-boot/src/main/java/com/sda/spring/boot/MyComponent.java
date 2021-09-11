@@ -9,7 +9,8 @@ public class MyComponent {
 
     private static final Logger logger = LoggerFactory.getLogger(MyComponent.class);
 
-    public void complexOperation() {
+    public String complexOperation() {
         logger.info("--- in complex operation");
+        return "ok";
     }
 }

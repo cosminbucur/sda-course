@@ -60,14 +60,6 @@
             <version>0.10.0</version>
         </dependency>
 
-        <!-- junit 4 unit tests -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit-old.version}</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
 </project>

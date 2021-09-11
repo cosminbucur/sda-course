@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bucur.fxml.Controller">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.javafx.fxml.Controller">
     <Label text="Label text"/>
     <TextField fx:id="textField"/>
     <Button text="Button text" onAction="#onButtonClick"/>

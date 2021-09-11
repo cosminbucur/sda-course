@@ -12,8 +12,12 @@ import java.util.List;
 public class UserService {
 
     // TODO: create user dao
+    private final UserDao userDao;
+
     @Autowired
-    private UserDao userDao;
+    public UserService(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     // TODO: get list from the db
     @Transactional(readOnly = true)

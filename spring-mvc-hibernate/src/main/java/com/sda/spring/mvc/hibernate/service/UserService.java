@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class UserService {
 
+    private final UserDao dao;
+
     @Autowired
-    private UserDao dao;
+    public UserService(UserDao dao) {
+        this.dao = dao;
+    }
 
     @Transactional
     public void create(final User user) {

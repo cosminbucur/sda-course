@@ -6,6 +6,6 @@ create a run configuration
     
 set the main class in the xml plugin
 
-    <mainClass>com.bucur.containers.DemoContainers</mainClass>
+    <mainClass>com.sda.javafx.containers.DemoContainers</mainClass>
     
 run config

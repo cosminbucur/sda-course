@@ -54,7 +54,7 @@
                     <source>11</source>
                     <target>11</target>
                     <release>11</release>
-                    <mainClass>com.bucur.containers.DemoContainers</mainClass>
+                    <mainClass>com.sda.javafx.containers.DemoContainers</mainClass>
                 </configuration>
             </plugin>
         </plugins>

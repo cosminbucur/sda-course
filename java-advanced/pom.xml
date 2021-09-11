@@ -12,7 +12,6 @@
     <artifactId>java-advanced</artifactId>
 
     <dependencies>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -53,14 +52,5 @@
             <artifactId>vavr</artifactId>
             <version>0.10.0</version>
         </dependency>
-
-        <!-- junit 4 unit tests -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit-old.version}</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 </project>

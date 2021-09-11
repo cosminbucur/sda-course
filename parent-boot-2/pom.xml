@@ -2,18 +2,18 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>parent-boot-2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>parent-boot-2</name>
-    <packaging>pom</packaging>
-    <description>Parent for all Spring Boot 2 modules</description>
-
     <parent>
         <artifactId>sda-course</artifactId>
         <groupId>com.sda</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <name>parent-boot-2</name>
+    <description>Parent for all Spring Boot 2 modules</description>
+
+    <artifactId>parent-boot-2</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
     <properties>
         <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
@@ -24,7 +24,7 @@
         <bootstrap.version>4.3.1</bootstrap.version>
     </properties>
 
-    <!-- plugins -->
+    <!-- used when project has a parent other than spring parent -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -38,6 +38,14 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- used when project has no parent -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-parent</artifactId>-->
+        <!--            <version>${spring-boot.version}</version>-->
+        <!--        </dependency>-->
+
+        <!-- enable junit 5 tests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -54,6 +62,7 @@
     <build>
         <pluginManagement>
             <plugins>
+                <!-- Package as an executable jar/war -->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>

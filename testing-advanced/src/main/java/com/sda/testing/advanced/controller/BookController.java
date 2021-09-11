@@ -16,7 +16,7 @@ import java.util.List;
 public class BookController {
 
     public static final String API_BOOKS = "/api/books";
-    private BookService bookService;
+    private final BookService bookService;
 
     @Autowired
     public BookController(BookService bookService, BookMapper bookMapper) {

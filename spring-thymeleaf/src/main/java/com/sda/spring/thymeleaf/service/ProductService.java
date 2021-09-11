@@ -16,7 +16,7 @@ public class ProductService {
 
     private static final Logger log = LoggerFactory.getLogger(ProductService.class);
 
-    private ProductRepository repository;
+    private final ProductRepository repository;
 
     @Autowired
     public ProductService(ProductRepository repository) {

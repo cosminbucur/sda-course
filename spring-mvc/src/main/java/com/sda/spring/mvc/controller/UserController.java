@@ -22,8 +22,12 @@ public class UserController {
 
     // TODO: create edit users view
 
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     // create mapping for method (end point)
     // this mapping is handled by the mapping handler

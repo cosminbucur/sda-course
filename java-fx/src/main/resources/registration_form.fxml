@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <GridPane xmlns:fx="http://javafx.com/fxml"
-          fx:controller="com.bucur.register_form_fxml.RegistrationFormController" alignment="center"
+          fx:controller="com.sda.javafx.register_form_fxml.RegistrationFormController" alignment="center"
           hgap="10" vgap="10">
     <padding>
         <Insets top="40" right="40" bottom="40" left="40"/>
