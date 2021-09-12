@@ -72,7 +72,6 @@
 - iterate a map
 - get the keys from a map
 - get the values from a map
-- solve ex 1 / pag 74 (sda slides)
 
 ### functional interfaces
 
