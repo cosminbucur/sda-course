@@ -1,4 +1,4 @@
-package com.bucur.associations.one_to_one;
+package com.sda.hibernate.associations.one_to_one;
 
 
 import javax.persistence.Column;

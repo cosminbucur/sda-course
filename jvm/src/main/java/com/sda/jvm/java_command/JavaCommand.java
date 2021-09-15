@@ -1,4 +1,4 @@
-package com.bucur.jvm.java_command;
+package com.sda.jvm.java_command;
 
 public class JavaCommand {
 

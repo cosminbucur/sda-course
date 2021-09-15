@@ -1,9 +1,9 @@
-package com.bucur.listeners;
+package com.sda.hibernate.listeners;
 
-import com.bucur.listeners.customer.Customer;
-import com.bucur.listeners.customer.CustomerRepository;
-import com.bucur.listeners.history.CustomerHistory;
-import com.bucur.listeners.history.CustomerHistoryRepository;
+import com.sda.hibernate.listeners.customer.Customer;
+import com.sda.hibernate.listeners.customer.CustomerRepository;
+import com.sda.hibernate.listeners.history.CustomerHistory;
+import com.sda.hibernate.listeners.history.CustomerHistoryRepository;
 
 import java.util.List;
 

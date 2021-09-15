@@ -1,8 +1,8 @@
-package com.bucur.session;
+package com.sda.hibernate.session;
 
-import com.bucur.config.HibernateUtil;
-import com.bucur.crud.Person;
-import com.bucur.crud.PersonDao;
+import com.sda.hibernate.config.HibernateUtil;
+import com.sda.hibernate.crud.Person;
+import com.sda.hibernate.crud.PersonDao;
 import org.hibernate.Session;
 
 // sometime we need to detach the session object because we need to change it

@@ -1,4 +1,4 @@
-package com.bucur.types;
+package com.sda.hibernate.types;
 
 public enum Status {
 

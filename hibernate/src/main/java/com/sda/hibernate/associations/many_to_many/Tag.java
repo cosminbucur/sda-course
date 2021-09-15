@@ -1,4 +1,4 @@
-package com.bucur.associations.many_to_many;
+package com.sda.hibernate.associations.many_to_many;
 
 import org.hibernate.annotations.NaturalId;
 

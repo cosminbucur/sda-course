@@ -1,4 +1,4 @@
-package com.bucur.types;
+package com.sda.hibernate.types;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

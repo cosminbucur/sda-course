@@ -1,4 +1,4 @@
-package com.bucur.config;
+package com.sda.hibernate.config;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,7 +11,7 @@ public class JpaUtil {
     // Static block for creating EntityManagerFactory.
     // The Persistence class looks for META-INF/persistence.xml in the classpath
     static {
-        emf = Persistence.createEntityManagerFactory("com.bucur.jpa_tutorial");
+        emf = Persistence.createEntityManagerFactory("com.sda.hibernate.jpa_tutorial");
     }
 
     public static EntityManager getEntityManager() {

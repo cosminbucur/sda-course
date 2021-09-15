@@ -1,4 +1,4 @@
-package com.bucur.associations.one_to_one_join;
+package com.sda.hibernate.associations.one_to_one_join;
 
 public class DemoOneToOneJoin {
 

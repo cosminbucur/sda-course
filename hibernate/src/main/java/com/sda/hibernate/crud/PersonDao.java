@@ -1,6 +1,6 @@
-package com.bucur.crud;
+package com.sda.hibernate.crud;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

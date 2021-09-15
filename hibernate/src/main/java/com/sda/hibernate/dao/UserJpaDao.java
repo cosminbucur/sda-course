@@ -1,4 +1,4 @@
-package com.bucur.dao;
+package com.sda.hibernate.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import static com.bucur.config.JpaUtil.getEntityManager;
+import static com.sda.hibernate.config.JpaUtil.getEntityManager;
 
 // https://www.baeldung.com/hibernate-entitymanager
 // https://juliuskrah.com/tutorial/2017/02/15/crud-operations-with-hibernate-and-jpa/

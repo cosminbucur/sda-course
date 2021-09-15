@@ -1,4 +1,4 @@
-package com.bucur.crud;
+package com.sda.hibernate.crud;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

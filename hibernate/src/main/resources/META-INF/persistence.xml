@@ -3,9 +3,9 @@
              xmlns="http://java.sun.com/xml/ns/persistence"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
-    <persistence-unit name="com.bucur.jpa_tutorial">
+    <persistence-unit name="com.sda.jpa_tutorial">
         <description>Hibernate EntityManager Demo</description>
-        <class>com.bucur.dao.User</class>
+        <class>com.sda.dao.User</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>

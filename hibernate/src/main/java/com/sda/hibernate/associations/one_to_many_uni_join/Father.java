@@ -1,4 +1,4 @@
-package com.bucur.associations.one_to_many_uni_join;
+package com.sda.hibernate.associations.one_to_many_uni_join;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

@@ -1,4 +1,4 @@
-package com.bucur.dao;
+package com.sda.hibernate.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

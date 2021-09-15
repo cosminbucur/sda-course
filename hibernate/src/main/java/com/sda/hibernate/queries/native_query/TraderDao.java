@@ -1,6 +1,6 @@
-package com.bucur.queries.native_query;
+package com.sda.hibernate.queries.native_query;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;

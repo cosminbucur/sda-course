@@ -1,4 +1,4 @@
-package com.bucur.session;
+package com.sda.hibernate.session;
 
 public class SessionMethods {
 

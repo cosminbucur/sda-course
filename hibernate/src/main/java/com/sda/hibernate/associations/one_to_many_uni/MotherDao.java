@@ -1,6 +1,6 @@
-package com.bucur.associations.one_to_many_uni;
+package com.sda.hibernate.associations.one_to_many_uni;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

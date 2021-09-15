@@ -1,4 +1,4 @@
-package com.bucur.jvm.jar_command;
+package com.sda.jvm.jar_command;
 
 public class CreateAJarFile {
 

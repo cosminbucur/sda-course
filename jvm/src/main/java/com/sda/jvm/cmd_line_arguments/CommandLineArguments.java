@@ -1,4 +1,4 @@
-package com.bucur.jvm.cmd_line_arguments;
+package com.sda.jvm.cmd_line_arguments;
 
 public class CommandLineArguments {
 

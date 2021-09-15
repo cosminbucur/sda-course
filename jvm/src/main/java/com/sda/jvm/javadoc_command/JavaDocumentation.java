@@ -1,4 +1,4 @@
-package com.bucur.jvm.javadoc_command;
+package com.sda.jvm.javadoc_command;
 
 import java.io.IOException;
 import java.nio.file.Files;

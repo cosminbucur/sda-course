@@ -1,6 +1,6 @@
-package com.bucur.types;
+package com.sda.hibernate.types;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

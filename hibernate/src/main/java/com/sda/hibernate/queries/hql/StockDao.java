@@ -1,6 +1,6 @@
-package com.bucur.queries.hql;
+package com.sda.hibernate.queries.hql;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -28,7 +28,7 @@ public class StockDao {
     }
 
     public List<Stock> findAllWithHqlQuery() {
-        String hql = "FROM com.bucur.queries.hql.Stock";
+        String hql = "FROM com.sda.hibernate.queries.hql.Stock";
         List<Stock> result = new ArrayList<>();
         try (Session session = openSession()) {
 

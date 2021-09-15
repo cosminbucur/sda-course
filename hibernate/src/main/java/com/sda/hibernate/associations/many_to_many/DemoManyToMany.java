@@ -1,4 +1,4 @@
-package com.bucur.associations.many_to_many;
+package com.sda.hibernate.associations.many_to_many;
 
 public class DemoManyToMany {
 

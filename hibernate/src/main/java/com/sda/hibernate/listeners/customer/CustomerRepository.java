@@ -1,6 +1,6 @@
-package com.bucur.listeners.customer;
+package com.sda.hibernate.listeners.customer;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

@@ -1,4 +1,4 @@
-package com.bucur.jvm.javac_command;
+package com.sda.jvm.javac_command;
 
 public class CompileThis {
 

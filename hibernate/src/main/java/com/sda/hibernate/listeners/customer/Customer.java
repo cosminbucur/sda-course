@@ -1,6 +1,6 @@
-package com.bucur.listeners.customer;
+package com.sda.hibernate.listeners.customer;
 
-import com.bucur.listeners.history.CustomerHistoryListener;
+import com.sda.hibernate.listeners.history.CustomerHistoryListener;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.bucur.listeners.history;
+package com.sda.hibernate.listeners.history;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

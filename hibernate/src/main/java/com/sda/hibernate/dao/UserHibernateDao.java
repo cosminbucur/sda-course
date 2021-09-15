@@ -1,6 +1,6 @@
-package com.bucur.dao;
+package com.sda.hibernate.dao;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

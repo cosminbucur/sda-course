@@ -1,4 +1,4 @@
-package com.bucur.queries.hql;
+package com.sda.hibernate.queries.hql;
 
 import java.util.List;
 

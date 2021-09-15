@@ -1,15 +1,15 @@
-package com.bucur.listeners.history;
+package com.sda.hibernate.listeners.history;
 
-import com.bucur.listeners.customer.Customer;
+import com.sda.hibernate.listeners.customer.Customer;
 
 import javax.persistence.PostPersist;
 import javax.persistence.PostRemove;
 import javax.persistence.PostUpdate;
 import java.time.LocalDateTime;
 
-import static com.bucur.listeners.history.Action.DELETED;
-import static com.bucur.listeners.history.Action.INSERTED;
-import static com.bucur.listeners.history.Action.UPDATED;
+import static com.sda.hibernate.listeners.history.Action.DELETED;
+import static com.sda.hibernate.listeners.history.Action.INSERTED;
+import static com.sda.hibernate.listeners.history.Action.UPDATED;
 
 public class CustomerHistoryListener {
 

@@ -1,4 +1,4 @@
-package com.bucur;
+package com.sda.hibernate;
 
 public class Annotations {
 

@@ -1,7 +1,7 @@
-package com.bucur.states;
+package com.sda.hibernate.states;
 
-import com.bucur.config.HibernateUtil;
-import com.bucur.crud.Person;
+import com.sda.hibernate.config.HibernateUtil;
+import com.sda.hibernate.crud.Person;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

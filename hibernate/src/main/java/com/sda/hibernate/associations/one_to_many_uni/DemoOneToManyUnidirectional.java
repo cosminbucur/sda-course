@@ -1,4 +1,4 @@
-package com.bucur.associations.one_to_many_uni;
+package com.sda.hibernate.associations.one_to_many_uni;
 
 import java.util.ArrayList;
 import java.util.List;

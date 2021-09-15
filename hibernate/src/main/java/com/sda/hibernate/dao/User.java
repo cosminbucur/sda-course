@@ -1,4 +1,4 @@
-package com.bucur.dao;
+package com.sda.hibernate.dao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

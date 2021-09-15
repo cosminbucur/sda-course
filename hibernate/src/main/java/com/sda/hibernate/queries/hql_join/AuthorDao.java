@@ -1,6 +1,6 @@
-package com.bucur.queries.hql_join;
+package com.sda.hibernate.queries.hql_join;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

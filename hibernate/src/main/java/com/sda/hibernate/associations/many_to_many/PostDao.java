@@ -1,6 +1,6 @@
-package com.bucur.associations.many_to_many;
+package com.sda.hibernate.associations.many_to_many;
 
-import com.bucur.config.HibernateUtil;
+import com.sda.hibernate.config.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

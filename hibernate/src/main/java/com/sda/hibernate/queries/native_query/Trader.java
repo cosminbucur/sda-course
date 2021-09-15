@@ -1,4 +1,4 @@
-package com.bucur.queries.native_query;
+package com.sda.hibernate.queries.native_query;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

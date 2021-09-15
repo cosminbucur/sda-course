@@ -1,7 +1,7 @@
 
 
 Version:	3.12
-CmdLine:	C:\dev\sda\sda\jvm\src\main\resources\com.bucur.randomizer.exe --l4j-debug
+CmdLine:	C:\dev\sda\sda\jvm\src\main\resources\com.sda.randomizer.exe --l4j-debug
 WOW64:		yes
 Working dir:	C:\dev\sda\sda\jvm\src\main\resources\.
 Java min ver:	1.008.000
@@ -40,6 +40,6 @@ Check launcher:	C:\Program Files\Java\jdk-11.0.1\bin\javaw.exe (OK)
 Match:		1.011.000_001
 Runtime used:	1.011.000_001 (64-bit)
 Launcher:	C:\Program Files\Java\jdk-11.0.1\bin\javaw.exe
-Launcher args:	-jar "C:\dev\sda\sda\jvm\src\main\resources\com.bucur.randomizer.exe"
+Launcher args:	-jar "C:\dev\sda\sda\jvm\src\main\resources\com.sda.randomizer.exe"
 Args length:	59/32768 chars
 Exit code:	1

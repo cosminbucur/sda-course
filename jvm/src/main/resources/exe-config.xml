@@ -3,7 +3,7 @@
     <dontWrapJar>false</dontWrapJar>
     <headerType>gui</headerType>
     <jar>C:\dev\sda\sda\jvm\build\libs\jvm-1.0-SNAPSHOT.jar</jar>
-    <outfile>C:\dev\sda\sda\jvm\src\main\resources\com.bucur.randomizer.exe</outfile>
+    <outfile>C:\dev\sda\sda\jvm\src\main\resources\com.sda.randomizer.exe</outfile>
     <errTitle></errTitle>
     <cmdLine></cmdLine>
     <chdir>.</chdir>

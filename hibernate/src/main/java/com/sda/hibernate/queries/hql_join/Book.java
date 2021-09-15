@@ -1,4 +1,4 @@
-package com.bucur.queries.hql_join;
+package com.sda.hibernate.queries.hql_join;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
