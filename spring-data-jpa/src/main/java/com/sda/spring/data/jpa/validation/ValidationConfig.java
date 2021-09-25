@@ -60,8 +60,7 @@ public class ValidationConfig {
 
         List<UserReadDto> allUserReadDto = userService.findAll();
 
-        UserReadDto foundUserDto = userService.findById(savedDto.getId())
-                .orElseThrow(() -> new RuntimeException("user not found"));
+        UserReadDto foundUserDto = userService.findById(savedDto.getId());
 
         UserWriteDto updateDto = new UserWriteDto();
         updateDto.setName("anna");

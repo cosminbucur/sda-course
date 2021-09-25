@@ -15,9 +15,9 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 // validate service or controller, persistence layer validation is too late
-@Service
 // evaluate the constraint annotations on method parameters
 @Validated
+@Service
 public class UserService {
 
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
@@ -32,21 +32,28 @@ public class UserService {
     }
 
     // expecting this object to be valid
-    public UserReadDto save(@Valid UserWriteDto dto) {
-        User entityToSave = userMapper.toEntity(dto);
-        User savedEntity = userRepository.save(entityToSave);
+    public UserReadDto save(@Valid UserWriteDto writeDto) {
+        log.info("saving user: {}", writeDto);
+
+        User entity = userMapper.toEntity(writeDto);
+        User savedEntity = userRepository.save(entity);
         return userMapper.toDto(savedEntity);
     }
 
     public List<UserReadDto> findAll() {
+        log.info("find all users");
+
         return userRepository.findAll().stream()
                 .map(user -> userMapper.toDto(user))
                 .collect(Collectors.toList());
     }
 
-    public Optional<UserReadDto> findById(Long id) {
+    public UserReadDto findById(Long id) {
+        log.info("finding user: {}", id);
+
         return userRepository.findById(id)
-                .map(user -> userMapper.toDto(user));
+                .map(user -> userMapper.toDto(user))
+                .orElseThrow(() -> new NotFoundException("user not found"));
     }
 
     public UserReadDto update(Long id, UserWriteDto updateData) {
@@ -76,6 +83,8 @@ public class UserService {
     }
 
     public void delete(Long id) {
+        log.info("deleting user: {}", id);
+
         userRepository.deleteById(id);
     }
 }
