@@ -55,8 +55,10 @@
       
       add template:
       
-      private static final Logger logger = Logger.getLogger($CLASSNAME$.class.getName());
+      private static final Logger log = LoggerFactory.getLogger($CLASSNAME$.class);
 
       abbreviation: pslog
       description: private static log
       applicable in java: declaration
+
+      edit variables > expression > className() 
