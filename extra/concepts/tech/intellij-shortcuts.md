@@ -33,3 +33,8 @@ CTRL + SHIFT up - move code up
 CTRL + SHIFT down - move code down
 generate test: click on class name, ALT + ENTER
 ```
+
+## fun
+```html
+CTRL + ALT + ; - show emojis
+```
