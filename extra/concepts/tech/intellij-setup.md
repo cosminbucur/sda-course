@@ -2,9 +2,10 @@
 
 ## plugins
 
-- sonarlint
-- .ignore
-- diagrams.net
+- sonarlint - find and fix bugs as you type
+- .ignore - ignore files for git
+- key promoter x - learn shortcuts
+- diagrams.net - draw diagrams
 
 ## visuals
 
