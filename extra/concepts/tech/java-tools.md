@@ -13,13 +13,13 @@ in cmd-line-arguments-command
 > java CommandLineArguments 10 20 30
 
 # javadoc
-api docs generator javadoc [options] [packagenames] [sourcefiles] [@files]
+api docs generator javadoc [options] [packagenames] [sourcefiles] [@files]
 
 in javadoc-command
 > javac JavaDocumentation.java
-> javadoc -d ./javadoc JavaDocumentation.java 
+> javadoc -d ./javadoc JavaDocumentation.java
 
-run javadoc in gradle / maven  Windows: For example, if you want to document com.mypackage, whose source files reside in the directory \user\src\com\mypackage, and if this package relies on a library in \user\lib, then you would use the following command:
+run javadoc in gradle / maven Windows: For example, if you want to document com.mypackage, whose source files reside in the directory \user\src\com\mypackage, and if this package relies on a library in \user\lib, then you would use the following command:
 
 javadoc -sourcepath \user\lib -classpath \user\src com.mypackage
 
@@ -36,14 +36,14 @@ create file CreateAJarFile.java
 > javac CreateAJarFile.java
 > jar -cvf MyJarFile.jar CreateAJarFile.class
 > cd ..
-> java -cp ./jar-command/MyJarFile.jar CreateAJarFile 
+> java -cp ./jar-command/MyJarFile.jar CreateAJarFile
 
 # display content of jar
 
-> jar -tvf MyJarFile.jar jar -xvf SampleWebApp.war
+> jar -tvf MyJarFile.jar jar -xvf SampleWebApp.war
 
 
 # visual vm
-download visualvm https://visualvm.github.io/index.html
+download visualvm https://visualvm.github.io/index.html
 install visualvm intellij plugin
 configure visualvm intellij plugin
