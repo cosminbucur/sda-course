@@ -51,9 +51,11 @@
 
 - add log entry with shortcut `pslog`
 
-      File > Editor > Live Templates
+      File > Settings > Editor > Live Templates
       
-      add template:
+      add template (+ button)
+      select Live Template
+      add code:
       
       private static final Logger log = LoggerFactory.getLogger($CLASSNAME$.class);
 
