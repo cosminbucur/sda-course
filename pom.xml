@@ -49,7 +49,7 @@
         <module>spring-data-jpa</module>
 
         <!-- desktop -->
-        <module>java-fx</module>
+        <module>java-fx</module>                <!-- old -->
         <module>html</module>
 
         <!-- spring -->
@@ -63,7 +63,7 @@
         <module>spring-mvc</module>             <!-- no boot -->
         <module>spring-mvc-hibernate</module>
 
-        <module>spring-boot-jsp</module>
+        <module>spring-boot-jsp</module>        <!-- old -->
         <module>spring-thymeleaf</module>
         <module>spring-boot-rest</module>
         <module>testing-advanced</module>
@@ -75,7 +75,7 @@
         <module>spring-security-thymeleaf</module>
 
         <!-- old modules -->
-        <module>jvm</module>
+        <module>jvm</module>                    <!-- old -->
         <module>networking</module>
     </modules>
 
