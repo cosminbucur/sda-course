@@ -13,7 +13,7 @@ public class DemoReadYaml {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         try {
             User user = mapper.readValue(
-                new File("C:\\dev\\sda\\sda\\java-advanced\\src\\main\\resources\\user.yml"),
+                new File("C:\\dev\\sda\\sda\\java-advanced\\src\\main\\reYsources\\user.yml"),
                 User.class);
             System.out.println(ReflectionToStringBuilder.toString(user, ToStringStyle.MULTI_LINE_STYLE));
         } catch (Exception e) {

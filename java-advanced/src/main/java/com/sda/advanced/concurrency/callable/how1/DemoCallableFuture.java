@@ -11,11 +11,11 @@ public class DemoCallableFuture {
         // implements both Runnable and Future
         FutureTask[] randomNumberTasks = new FutureTask[5];
 
-        for (int i = 0; i < 5; i++) {
-            Callable callable = new RandomGeneratorTask();
+        for (int i = 0; i < randomNumberTasks.length; i++) {
+            Callable<Integer> callable = new RandomGeneratorTask();
 
             // Create the FutureTask with Callable
-            randomNumberTasks[i] = new FutureTask(callable);
+            randomNumberTasks[i] = new FutureTask<>(callable);
 
             // As it implements Runnable, create Thread
             // with FutureTask
