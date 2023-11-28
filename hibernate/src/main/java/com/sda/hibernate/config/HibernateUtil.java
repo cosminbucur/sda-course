@@ -1,7 +1,7 @@
 package com.sda.hibernate.config;
 
-import com.sda.hibernate.associations.many_to_many.Post;
 import com.sda.hibernate.associations.many_to_many.Tag;
+import com.sda.hibernate.associations.many_to_many.Post;
 import com.sda.hibernate.associations.one_to_many_bi.Child;
 import com.sda.hibernate.associations.one_to_many_bi.Parent;
 import com.sda.hibernate.associations.one_to_many_uni.Daughter;
@@ -15,6 +15,8 @@ import com.sda.hibernate.associations.one_to_one_join.Employee;
 import com.sda.hibernate.crud.Person;
 import com.sda.hibernate.listeners.customer.Customer;
 import com.sda.hibernate.listeners.history.CustomerHistory;
+import com.sda.hibernate.nplus_one.Department;
+import com.sda.hibernate.nplus_one.Doctor;
 import com.sda.hibernate.queries.hql.Stock;
 import com.sda.hibernate.queries.hql_join.Author;
 import com.sda.hibernate.queries.hql_join.Book;
@@ -105,6 +107,10 @@ public class HibernateUtil {
         // listeners
         configuration.addAnnotatedClass(Customer.class);
         configuration.addAnnotatedClass(CustomerHistory.class);
+
+        // N+1 problem
+        configuration.addAnnotatedClass(Doctor.class);
+        configuration.addAnnotatedClass(Department.class);
 
         return configuration;
     }
