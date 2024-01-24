@@ -31,10 +31,10 @@ select * from customers join orders
 where customers.customer_id = orders.customer_id
 and orders.amount > 15;
 
-# left outer join
+-- left outer join
 select * from customers left outer join orders
 using (customer_id);
 
-# right outer join
+-- right outer join
 select * from customers right outer join orders
 using (customer_id);

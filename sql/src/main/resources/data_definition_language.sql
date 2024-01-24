@@ -1,11 +1,11 @@
-# DDL (data definition language)
+-- DDL (data definition language)
 
-# add column
+-- add column
 ALTER TABLE
 employees
 ADD COLUMN manager TINYINT;
 
-# remove column
+-- remove column
 ALTER TABLE
 employees
 DROP COLUMN manager;

@@ -1,4 +1,4 @@
-# create a table
+-- create a table
 CREATE TABLE employees (
     id_employees INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE employees (
         REFERENCES departments (id_departments)
 );
 
-# insert data 
+-- insert data
 INSERT INTO
 employees
 (first_name, last_name, id_departments)
@@ -19,16 +19,16 @@ VALUES
 (' Ibraheem',' Mcfadden', 1),
 (' Kade',' Christie', 2);
 
-# select
+-- select
 SELECT 
     *
 FROM
     employees;
 
-# delete
+-- delete
 DELETE FROM employees 
 WHERE
     employees.id_employees = 4;
     
-# delete table
+-- delete table
 DROP TABLE employees;

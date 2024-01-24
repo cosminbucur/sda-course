@@ -1,6 +1,6 @@
-# DML (data manipulation language)
+-- DML (data manipulation language)
 
-# insert
+-- insert
 INSERT INTO
 employees
 (first_name , last_name , id_departments)
@@ -11,14 +11,14 @@ SELECT
 FROM
 employees;
 
-# update
+-- update
 UPDATE employees 
 SET 
     first_name = 'Johnny'
 WHERE
     id_employees = 3;
     
-# update (multiple tables)
+-- update (multiple tables)
 UPDATE employees
         INNER JOIN
     departments ON employees.id_employees = departments.id_departments 
@@ -28,7 +28,7 @@ SET
 WHERE
     departments.name = 'HR';
     
-# delete (multiple tables)
+-- delete (multiple tables)
 DELETE employees FROM employees
         INNER JOIN
     departments USING (id_departments) 

@@ -1,4 +1,4 @@
-# views
+-- views
 create view employees_with_dept_name as
     select
         employees.*, departments.name as department_name
@@ -7,6 +7,6 @@ create view employees_with_dept_name as
             left join
         departments using (id_departments);
 
-# select view
+-- select view
 select
 * from employees_with_dept_name;

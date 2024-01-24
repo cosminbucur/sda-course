@@ -1,4 +1,4 @@
-# procedure
+-- procedure
 DELIMITER $$
 create PROCEDURE insert_employee(
 p_first_name VARCHAR(45),
@@ -11,5 +11,5 @@ BEGIN
     (p_first_name , p_last_name , p_department_id);
 END$$
 
-# call procedure
+-- call procedure
 CALL insert_employee('Kate', 'Joseph', 3);

@@ -1,18 +1,18 @@
-# DQL (data query language)
+-- DQL (data query language)
 
-# select particular columns
+-- select particular columns
 SELECT
     first_name, last_name
 FROM
     persons;
 
-# select distinct
+-- select distinct
 SELECT DISTINCT
     first_name
 FROM
     persons;
 
-# where clause
+-- where clause
 SELECT
     first_name, last_name, birth_date
 FROM
@@ -20,20 +20,20 @@ FROM
 WHERE
     first_name = 'Michael';
 
-# select as
+-- select as
 SELECT
     first_name AS name,
     last_name AS surname
 FROM
     persons;
 
-# select not null
+-- select not null
 SELECT
     COUNT(birth_date) AS 'persons that have date of birthed filled'
 FROM
     persons;
 
-# group by
+-- group by
 SELECT
     first_name,
     COUNT(*) AS 'occurrences count'
@@ -41,7 +41,7 @@ FROM
     persons
 GROUP BY first_name;
 
-# having
+-- having
 SELECT
     first_name AS 'we have two or more people with such name!'
 FROM
@@ -49,7 +49,7 @@ FROM
 GROUP BY first_name
 HAVING COUNT(*) > 1;
 
-# inner join
+-- inner join
 SELECT
     *
 FROM
@@ -58,7 +58,7 @@ INNER JOIN
     departments ON
     employees.id_departments = departments.id_departments;
 
-# inner join (multiple tables)
+-- inner join (multiple tables)
 SELECT
     employees.first_name,
     employees.last_name,
@@ -69,7 +69,7 @@ INNER JOIN
     departments ON
     employees.id_departments = departments.id_departments;
 
-# inner join aliases
+-- inner join aliases
 SELECT
     e.first_name, e.last_name, d.name AS 'department name'
 FROM
@@ -78,7 +78,7 @@ INNER JOIN
     departments AS d ON
     e.id_departments = d.id_departments;
 
-# inner join using
+-- inner join using
 SELECT
     employees.first_name,
     employees.last_name,
@@ -88,7 +88,7 @@ FROM
 INNER JOIN
     departments USING (id_departments);
 
-# inner join (using equivalent)
+-- inner join (using equivalent)
 SELECT
     *
 FROM
@@ -97,7 +97,7 @@ FROM
 WHERE
     employees.id_departments = departments.id_departments;
 
-# left join
+-- left join
 SELECT
     employees.first_name,
     employees.last_name,
@@ -107,7 +107,7 @@ FROM
 LEFT JOIN
     departments USING (id_departments);
 
-# cross join
+-- cross join
 SELECT
     *
 FROM
@@ -115,41 +115,41 @@ FROM
         CROSS JOIN
     departments;
 
-# cross join 2
+-- cross join 2
 SELECT
     *
 FROM
     employees, departments;
 
-# order by asc
+-- order by asc
 SELECT
     *
 FROM
     employees
 ORDER BY last_name , first_name;
 
-# order by desc
+-- order by desc
 SELECT
     *
 FROM
     employees
 ORDER BY last_name DESC;
 
-# limit
+-- limit
 SELECT
     *
 FROM
     employees
 LIMIT 3;
 
-# limit 2
+-- limit 2
 SELECT
     *
 FROM
     employees
 LIMIT 3 , 2;
 
-# union
+-- union
 SELECT
     first_name
 FROM
@@ -159,7 +159,7 @@ UNION SELECT
 FROM
     employees;
 
-# case
+-- case
 SELECT
     CASE
         WHEN first_name LIKE 'M%' THEN 'name starts with M'
@@ -169,7 +169,7 @@ SELECT
 FROM
     employees;
 
-# exists
+-- exists
 SELECT
     *
 FROM

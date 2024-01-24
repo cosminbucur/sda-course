@@ -1,4 +1,4 @@
-# function
+-- function
 DELIMITER $$
 create FUNCTION add_two_ints(
 a INT , -- parametr a of type int
@@ -13,7 +13,7 @@ END$$
 -- use function:
 SELECT add_two_ints(3, 5);
 
-# if else
+-- if else
 DELIMITER $$
 CREATE FUNCTION my_sign (a INT)
 RETURNS INT
@@ -25,7 +25,7 @@ END IF;
 END$$
 SELECT my_sign(2);
 
-# loop
+-- loop
 DELIMITER $$
 CREATE FUNCTION my_power (a INT , b INT)
 RETURNS INT
